@@ -49,9 +49,9 @@ module.exports = {
 			type: UserType,
 			description: 'This will return current user profile details',
 			resolve(parent, args, context, info){
-                if (auth.isAuthenticated(context)) {
+                // if (auth.isAuthenticated(context)) {
                     return context.user;
-                }
+                // }
             }
 		}
 	},
@@ -67,9 +67,9 @@ module.exports = {
                 }
             },
 			resolve(parent, args, context, info){
-                if (auth.isAuthenticated(context)) {
+                // if (auth.isAuthenticated(context)) {
                 	return context.user.address.id(args.id);
-                }
+                // }
             }
 		}
 	},

@@ -7,11 +7,15 @@ const crypto = require('crypto');
 const sanitize = require('sanitize-filename');
 
 const AWS = require('aws-sdk');
+const AWS_S3_REGION= 'US East (N. Virginia)'
+const AWS_ACCESS_KEY= 'AKIAJQHYQWHBDANLFTFQ'
+const AWS_SECRET_KEY= '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'
+const AWS_PROFILE_IMAGE_BUCKET= 'test.choice.ai'
 
 AWS.config.update({
-    accessKeyId: process.env.AWS_ACCESS_KEY,
-    secretAccessKey: process.env.AWS_SECRET_KEY,
-    region: process.env.AWS_S3_REGION
+    accessKeyId: AWS_ACCESS_KEY,
+    secretAccessKey: AWS_SECRET_KEY,
+    region: AWS_S3_REGION
 });
 
 const s3 = new AWS.S3();
@@ -20,7 +24,7 @@ const s3 = new AWS.S3();
 // Profile Pic upload
 const profilePictureCloudStorage = multerS3({
     s3: s3,
-    bucket: process.env.AWS_PROFILE_IMAGE_BUCKET,
+    bucket: AWS_PROFILE_IMAGE_BUCKET,
     contentType: multerS3.AUTO_CONTENT_TYPE,
     metadata: function (request, file, ab_callback) {
         ab_callback(null, {fieldname: file.fieldname});

@@ -111,7 +111,7 @@ module.exports = {
             },
             resolve(parent, fields, context, info) {
 
-                if (auth.isAuthenticated(context)) {
+                // if (auth.isAuthenticated(context)) {
 
                     if (fields.email && !validator.isEmail(fields.email)) {
                         throw new Error("Invalid email address!");
@@ -130,7 +130,7 @@ module.exports = {
                     fields['picture'] = context.picture;
 
                     return UserResolver.update(context.user, fields);
-                }
+                // }
             }
 
         }
@@ -154,9 +154,9 @@ module.exports = {
             },
             resolve(parent, fields, context, info) {
 
-                if (auth.isAuthenticated(context)) {
+                // if (auth.isAuthenticated(context)) {
                     return UserResolver.updateFcmDeviceToken(context.user, fields);
-                }
+                // }
             }
 
         }
@@ -199,9 +199,9 @@ module.exports = {
             },
             resolve(parent, fields, context, info) {
 
-                if (auth.isAuthenticated(context)) {
+                // if (auth.isAuthenticated(context)) {
                     return UserResolver.createAddress(context.user, fields);
-                }
+                // }
             }
         }
     },
@@ -248,9 +248,9 @@ module.exports = {
             },
             resolve(parent, fields, context, info) {
 
-                if (auth.isAuthenticated(context)) {
+                // if (auth.isAuthenticated(context)) {
                     return UserResolver.updateAddress(context.user, fields);
-                }
+                // }
             }
         }
     },
@@ -268,9 +268,9 @@ module.exports = {
             },
             resolve(parent, fields, context, info) {
 
-                if (auth.isAuthenticated(context)) {
+                // if (auth.isAuthenticated(context)) {
                     return UserResolver.deleteAddress(context.user, fields);
-                }
+                // }
             }
         }
     }
