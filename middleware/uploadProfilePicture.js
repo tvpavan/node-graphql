@@ -8,9 +8,9 @@ const sanitize = require('sanitize-filename');
 
 const AWS = require('aws-sdk');
 const AWS_S3_REGION= 'US East (N. Virginia)'
-const AWS_ACCESS_KEY= 'AKIAJQHYQWHBDANLFTFQ'
-const AWS_SECRET_KEY= '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'
-const AWS_PROFILE_IMAGE_BUCKET= 'test.choice.ai'
+const AWS_ACCESS_KEY= ''
+const AWS_SECRET_KEY= ''
+const AWS_PROFILE_IMAGE_BUCKET= ''
 
 AWS.config.update({
     accessKeyId: AWS_ACCESS_KEY,
